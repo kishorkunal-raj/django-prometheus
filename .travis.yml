@@ -41,3 +41,6 @@ deploy:
     on:
       branch:
       - master
+arch:
+   - amd64
+   - ppc64le
