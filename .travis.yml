@@ -10,10 +10,10 @@ services:
   - mysql
   - postgresql
 addons:
-  postgresql: 9.5
+  - if [[ "${TRAVIS_CPU_ARCH}" == "ppc64le" ]]; then postgresql: "10" else  postgresql: 9.5 ; fi
   apt:
     packages:
-      - postgresql-9.5-postgis-2.4
+      - if [[ "${TRAVIS_CPU_ARCH}" == "ppc64le" ]]; then postgresql-10-postgis-2.4 else postgresql-9.5-postgis-2.4 ; fi
       - gdal-bin
 
 install:
