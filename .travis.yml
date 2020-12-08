@@ -10,7 +10,7 @@ services:
   - mysql
   - postgresql
 addons:
-  - if [[ "${TRAVIS_CPU_ARCH}" == "ppc64le" ]]; then postgresql: "10" else  postgresql: 9.5 ; fi
+  - if [[ "${TRAVIS_CPU_ARCH}" == "ppc64le" ]]; then postgresql: "10" ; else  postgresql: 9.5 ; fi
   apt:
     packages:
       - if [[ "${TRAVIS_CPU_ARCH}" == "ppc64le" ]]; then postgresql-10-postgis-2.4 else postgresql-9.5-postgis-2.4 ; fi
